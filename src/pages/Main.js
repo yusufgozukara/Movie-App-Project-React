@@ -24,8 +24,8 @@ const Main = () => {
         try {
             const {data} = await axios.get(url);
             setMovie(data.results);
-            // console.log(data);
-            setLoading(false);  
+
+ 
         } catch (error) {
             console.log(error);
         }
@@ -34,18 +34,20 @@ const Main = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        // setUrl(`https://api.themoviedb.org/3/search/movie?api_key=9c93618c90ee9fcfe38f6994e743d164&query=${inputSearch}`)
         getMovie();
     }
 
         
     useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1000);
         getMovie()
     }, [])
-    // console.log(inputSearch);
+
 
     if(loading){
-        return <img src={spin} alt="Loading" />
+        return <div className='loadingImage'><img src={spin} alt="Loading" /></div> 
       }
     
 

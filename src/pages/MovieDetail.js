@@ -31,8 +31,8 @@ const MovieDetail = () => {
             const {data} = await axios.get(detailUrl);
 
             setTekmovie(data);
-            // console.log(data);
-            setLoading(false);  
+            console.log(data);
+            // setLoading(false);  
         } catch (error) {
             console.log(error);
         }
@@ -44,13 +44,16 @@ const MovieDetail = () => {
 
             setFrame(data.results);
             console.log(data.results);
-            setLoading(false);  
+            // setLoading(false);  
         } catch (error) {
             console.log(error);
         }
     } 
     
     useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 1200);
         getMovie()
         getFrame()
     }, [])
@@ -58,17 +61,19 @@ const MovieDetail = () => {
     // console.log(tekmovie);
 
     if(loading){
-        return <img src={spin} alt="Loading" />
+        return <div className='loadingImage'><img src={spin} alt="Loading" /></div> 
       }
 //************************************************ */
 const imgBaseUrl = `https://image.tmdb.org/t/p/original${tekmovie.poster_path}`
   return (
     <div className='MovieDetailContainer'>
         <h2>{tekmovie.title}</h2>
-        <div className='frame'>
+        {frame && <div className='frame'>
+            
             <iframe src={`https://www.youtube.com/embed/${frame[0].key}`} title={frame[0].name} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-        </div>
+        </div> }
+        
         <div className="overviewContainer">
 
             <div className='detailImgDiv'>
