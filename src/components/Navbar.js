@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='navbarContainer'>
         <div className='navbarLeft'>
         <button>
-            <Link to='#' className='navbarLeftLink'>React Movie App</Link>
+            <Link to='/' className='navbarLeftLink'>React Movie App</Link>
         </button>  
         </div>
         <div className='navbarRight'>

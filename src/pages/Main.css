@@ -16,4 +16,13 @@
     border: 1px solid red;
     width: 90%;
     margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filmCard{
+    border: 1px solid blue;
+    width: 22%;
+    margin: 10px;
+    padding: 10px;
 }
