@@ -1,7 +1,10 @@
 import React from 'react'
 import './MovieCard.css';
+import notfound from '../assets/notfound.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({mov}) => {
+    const navigate = useNavigate();
     // console.log(mov);
     const {poster_path, title, overview, id} = mov;
 
@@ -9,7 +12,8 @@ const MovieCard = ({mov}) => {
 
   return (
     <div className='movieCard' key={id}>
-        <img src={imgBaseUrl} alt="klklkl" />
+        <button onClick={() => navigate(`${id}`, {state:mov})}><img src={imgBaseUrl ? imgBaseUrl : notfound}/></button>
+        
         <div className='miniCardTitle'>{title}</div>
         <div className="overview">
             <h3>Overview</h3>
