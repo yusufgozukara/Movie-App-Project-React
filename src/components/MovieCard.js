@@ -11,8 +11,8 @@ const MovieCard = ({mov}) => {
     const imgBaseUrl = `https://image.tmdb.org/t/p/original${poster_path}`
 
   return (
-    <div className='movieCard' key={id}>
-        <button onClick={() => navigate(`${id}`, {state:mov})}><img src={imgBaseUrl ? imgBaseUrl : notfound}/></button>
+    <div className='movieCard' key={id} onClick={() => navigate(`${id}`, {state:mov})}>
+        <button ><img src={imgBaseUrl ? imgBaseUrl : notfound}/></button>
         
         <div className='miniCardTitle'>{title}</div>
         <div className="overview">

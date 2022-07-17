@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import MovieCard from '../components/MovieCard';
 import './Main.css';
+import spin from '../assets/indir.gif';
 
 const Main = () => {
 
@@ -41,10 +42,10 @@ const Main = () => {
     useEffect(() => {
         getMovie()
     }, [])
-    console.log(inputSearch);
+    // console.log(inputSearch);
 
     if(loading){
-        return <h1>Loading...</h1>
+        return <img src={spin} alt="Loading" />
       }
     
 

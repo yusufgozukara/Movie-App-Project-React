@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Login from '../pages/Login'
 import Main from '../pages/Main'
+import MovieDetail from '../pages/MovieDetail'
 import NotFound from '../pages/NotFound'
 
 const Router = () => {
@@ -13,7 +14,8 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/login' element={<Login/>}/>
-            {/* <Route path='*' element={<NotFound/>}/> */}
+            <Route path='/:id' element={<MovieDetail/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     
     </BrowserRouter>
