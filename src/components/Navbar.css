@@ -1,0 +1,32 @@
+.navbarContainer{
+    width: 100%;
+    height: 70px;
+    background-color: skyblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.navbarRight button{
+    width: 120px;
+    height: 40px;
+    margin: 0 0 0 15px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+}
+.navbarLeft button{
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+.navbarLeft button .navbarLeftLink, .navbarRight button .navbarRightLink{
+    color: white;
+    text-decoration: none;
+}
+
+.navbarLeftLink{
+    font-size: 1.5rem;
+}
