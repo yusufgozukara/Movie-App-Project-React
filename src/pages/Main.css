@@ -1,0 +1,13 @@
+.searchSection{
+    display: block;
+    background-color: #ddd;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchMovie{
+    width: 200px;
+    border-radius: 5px;
+}
