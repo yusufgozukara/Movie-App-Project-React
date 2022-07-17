@@ -11,3 +11,9 @@
     width: 200px;
     border-radius: 5px;
 }
+
+.movieCardDiv{
+    border: 1px solid red;
+    width: 90%;
+    margin: 10px auto;
+}
