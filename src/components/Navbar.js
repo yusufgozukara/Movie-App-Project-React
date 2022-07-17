@@ -12,7 +12,7 @@ const Navbar = () => {
         </div>
         <div className='navbarRight'>
             <button>                
-                <Link to='#' className='navbarRightLink'>Login</Link>
+                <Link to='/login' className='navbarRightLink'>Login</Link>
             </button>       
             <button>                
                 <Link to='#' className='navbarRightLink'>Register</Link>
