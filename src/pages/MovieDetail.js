@@ -8,14 +8,15 @@ import './MovieDetails.css';
 
 const MovieDetail = () => {
 
+    const APP_KEY = process.env.REACT_APP_APP_KEY;
     const {id} = useParams();
     const navigate = useNavigate();
 
-    const detailUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=9c93618c90ee9fcfe38f6994e743d164`
+    const detailUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${APP_KEY}`
     // console.log(detailUrl);
 
 
-    const frameUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=9c93618c90ee9fcfe38f6994e743d164`
+    const frameUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${APP_KEY}`
 //************************** */
     const [loading, setLoading] = useState(true);
     const [tekmovie,setTekmovie] = useState([]);

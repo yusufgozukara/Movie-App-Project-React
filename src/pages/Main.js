@@ -5,14 +5,14 @@ import './Main.css';
 import spin from '../assets/indir.gif';
 
 const Main = () => {
-
+    
+    const APP_KEY = process.env.REACT_APP_APP_KEY;
     const [loading, setLoading] = useState(true);
     const [movie,setMovie] = useState([]);
-    const [url, setUrl] = useState(`https://api.themoviedb.org/3/discover/movie?api_key=9c93618c90ee9fcfe38f6994e743d164`);
+    const [url, setUrl] = useState(`https://api.themoviedb.org/3/discover/movie?api_key=${APP_KEY}`);
     const [inputSearch, setInputSearch] = useState('');
 
 
-    // const APP_KEY = process.env.REACT_APP_KEY;
 
 
     // const url = `https://api.themoviedb.org/3/discover/movie?api_key=9c93618c90ee9fcfe38f6994e743d164`
