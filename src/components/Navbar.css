@@ -25,6 +25,7 @@
 .navbarLeft button .navbarLeftLink, .navbarRight button .navbarRightLink{
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .navbarLeftLink{

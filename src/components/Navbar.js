@@ -15,7 +15,7 @@ const Navbar = () => {
                 <Link to='/login' className='navbarRightLink'>Login</Link>
             </button>       
             <button>                
-                <Link to='#' className='navbarRightLink'>Register</Link>
+                <Link to='/register' className='navbarRightLink'>Register</Link>
             </button>       
          </div>
     </div>

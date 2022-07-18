@@ -47,12 +47,20 @@
     border: 1px solid white;
     background-color: #4285F4;
     color: white;
+    cursor: pointer;
     
 }
 
 .formLabel, .formInput{
     display: block;
-    margin: 15px 0;
+    /* margin: 15px 0 0; */
     width: 100%;
+    height: 2rem;
+    font-size: 1.1rem;
+}
+.formLabel{
+
+    margin: 15px 0 0;
+
 }
 

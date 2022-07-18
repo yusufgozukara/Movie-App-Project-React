@@ -5,6 +5,7 @@ import Login from '../pages/Login'
 import Main from '../pages/Main'
 import MovieDetail from '../pages/MovieDetail'
 import NotFound from '../pages/NotFound'
+import Register from '../pages/Register'
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Routes>
             <Route path='/' element={<Main/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
             <Route path='/:id' element={<MovieDetail/>}/>
             <Route path='*' element={<NotFound/>}/>
         </Routes>
