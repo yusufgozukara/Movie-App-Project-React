@@ -1,6 +1,6 @@
 import React from 'react'
 import './MovieCard.css';
-import notfound from '../assets/notfound.jpg';
+// import notfound from '../assets/notfound.jpg';
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../context/UserAuthContext';
 
@@ -13,6 +13,7 @@ const MovieCard = ({mov}) => {
     const imgBaseUrl = `https://image.tmdb.org/t/p/original${poster_path}`
 
   return (
+    // <div className='movieCard' key={id} onClick={() => {user ? navigate(`${id}`, {state:mov}) : alert('Giriş yapınız')} }>
     <div className='movieCard' key={id} onClick={() => {user ? navigate(`${id}`, {state:mov}) : alert('Giriş yapınız')} }>
         <button ><img src={imgBaseUrl}/></button>
         
