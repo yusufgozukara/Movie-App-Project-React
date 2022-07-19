@@ -4,8 +4,8 @@ import { useUserAuth } from '../context/UserAuthContext';
 
 
 const PrivateRouter = ({children}) => {
-    let {user} = useUserAuth;
-    if(!auth){
+    let {user} = useUserAuth();
+    if(!user){
     <Navigate to='/'/>
     }
     // const user = true;

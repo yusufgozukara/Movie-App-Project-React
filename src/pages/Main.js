@@ -16,14 +16,6 @@ const Main = () => {
     const [url, setUrl] = useState(`https://api.themoviedb.org/3/discover/movie?api_key=${APP_KEY}`);
     const [inputSearch, setInputSearch] = useState('');
 
-
-
-
-    // const url = `https://api.themoviedb.org/3/discover/movie?api_key=9c93618c90ee9fcfe38f6994e743d164`
-
-
-
-
     const getMovie = async () => {
         try {
             const {data} = await axios.get(url);
@@ -35,13 +27,11 @@ const Main = () => {
         }
     } 
 
-
     const handleSearch = (e) => {
         e.preventDefault();
         getMovie();
     }
-
-        
+    
     useEffect(() => {
         setTimeout(() => {
             setLoading(false)
