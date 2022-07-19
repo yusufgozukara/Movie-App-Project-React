@@ -1,9 +1,15 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom';
+import { useUserAuth } from '../context/UserAuthContext';
 
-const PrivateRouter = () => {
-    const user = true;
-  return user ? <Outlet/> : <Navigate to='/login'/>
+
+const PrivateRouter = ({children}) => {
+    let {user} = useUserAuth;
+    if(!auth){
+    <Navigate to='/'/>
+    }
+    // const user = true;
+  return children 
     
   
 }

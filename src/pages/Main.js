@@ -3,8 +3,12 @@ import React, { useState, useEffect } from 'react'
 import MovieCard from '../components/MovieCard';
 import './Main.css';
 import spin from '../assets/indir.gif';
+import { useUserAuth } from '../context/UserAuthContext';
 
 const Main = () => {
+
+    const {user} = useUserAuth();
+    console.log(user);
     
     const APP_KEY = process.env.REACT_APP_APP_KEY;
     const [loading, setLoading] = useState(true);
