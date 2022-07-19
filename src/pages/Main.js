@@ -8,7 +8,7 @@ import { useUserAuth } from '../context/UserAuthContext';
 const Main = () => {
 
     const {user} = useUserAuth();
-    console.log(user);
+    // console.log(user);
     
     const APP_KEY = process.env.REACT_APP_APP_KEY;
     const [loading, setLoading] = useState(true);
@@ -58,9 +58,6 @@ const Main = () => {
             </form>
         </section>
         <div className='movieCardDiv'>
-            
-                {/* <MovieCard/> */}
-            {/* {console.log(movie)} */}
             {movie.map((mov) => {
                 return (<MovieCard mov={mov} key={mov.id}/>)
             })}

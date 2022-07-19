@@ -14,7 +14,7 @@ const MovieCard = ({mov}) => {
 
   return (
     <div className='movieCard' key={id} onClick={() => {user ? navigate(`${id}`, {state:mov}) : alert('Giriş yapınız')} }>
-        <button ><img src={imgBaseUrl ? imgBaseUrl : notfound}/></button>
+        <button ><img src={imgBaseUrl}/></button>
         
         <div className='miniCardTitle'>{title}</div>
         <div className="overview">

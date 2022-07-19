@@ -10,15 +10,15 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { signUp, googleSignIn } = useUserAuth();
+  const { logIn, googleSignIn  } = useUserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      await signUp(email, password);
-      navigate("/");
+      await logIn(email, password);
+      navigate(-1);
     } catch (error) {
       setError(error.message);
     }
@@ -68,7 +68,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {/* <button className="forgotPasswordButton">Forgot password?</button> */}
-              <button className="loginButton">Login</button>
+              <button className="loginButton" type="submit">Login</button>
               <button className="loginButton" onClick={handleGoogleSignIn}>
                 Continue with Google
               </button>
