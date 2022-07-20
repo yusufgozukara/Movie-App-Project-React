@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import { UserAuthContextProvider } from '../context/UserAuthContext'
 import Login from '../pages/Login'
 import Main from '../pages/Main'
 import MovieDetail from '../pages/MovieDetail'
@@ -13,7 +12,7 @@ const Router = () => {
   return (
     <>
     <BrowserRouter>
-    <UserAuthContextProvider>
+    {/* <UserAuthContextProvider> */}
 
         <Navbar/>
         <Routes>
@@ -21,14 +20,14 @@ const Router = () => {
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
 
-            <Route path='/:id' element={<PrivateRouter/>}>
-              <Route path='' element={<MovieDetail/>}/>
-            </Route>
+            {/* <Route path='/:id' element={<PrivateRouter/>}> */}
+              <Route path='/:id' element={<MovieDetail/>}/>
+            {/* </Route> */}
 
             <Route path='*' element={<NotFound/>}/>
         </Routes>
     
-    </UserAuthContextProvider>
+    {/* </UserAuthContextProvider> */}
     </BrowserRouter>
     </>
   )

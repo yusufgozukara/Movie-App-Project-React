@@ -30,7 +30,6 @@ const MovieDetail = () => {
     const getMovie = async () => {
         try {
             const {data} = await axios.get(detailUrl);
-
             setTekmovie(data);
             console.log(data);
             // setLoading(false);  
@@ -55,8 +54,8 @@ const MovieDetail = () => {
         setTimeout(() => {
             setLoading(false)
         }, 1200);
-        getMovie()
-        getFrame()
+        getMovie();
+        getFrame();
     }, [])
     // console.log(id);
     // console.log(tekmovie);

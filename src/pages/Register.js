@@ -1,28 +1,26 @@
 import React, { useState } from 'react'
 import cntower from '../assets/cntower.jpeg';
 import './Login.css';
-import { useUserAuth } from '../context/UserAuthContext';
 import {useNavigate} from 'react-router-dom';
 import { Alert } from 'bootstrap';
+import {createUser} from '../auth/firebase';
 
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
-  const {logIn} = useUserAuth();
+  // const {logIn} = useUserAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError('');
-    try {
-      await logIn(email, password);
-      navigate('/')
-    } catch (error) {
-      setError(error.message);
-    }
+    createUser(email,password, navigate);
+    
+
   }
+
+
 
   return (
     <div className='loginContainer'>
@@ -31,7 +29,7 @@ const Register = () => {
         </div>
         <div className="loginDiv">
             <h1>Register</h1>
-            {error && <Alert variant='danger'>{error}</Alert>}
+            {/* {error && <Alert variant='danger'>{error}</Alert>} */}
             <div className="loginDivInside">
             <div className="formDiv">
 
@@ -45,7 +43,7 @@ const Register = () => {
                 <label className='formLabel' htmlFor="password">Password</label>
                 <input className='formInput' type="password" name="password" id="password" placeholder='Enter your password...' onChange={(e) => setPassword(e.target.value)} />
                 {/* <button className='forgotPasswordButton'>Forgot password?</button> */}
-                <button className='loginButton'>Login</button>
+                <button className='loginButton' value='Register'>Register</button>
             </form>
             </div>
 

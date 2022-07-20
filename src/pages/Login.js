@@ -2,37 +2,24 @@ import { async } from "@firebase/util";
 import { Alert } from "bootstrap";
 import React, { useState } from "react";
 import cntower from "../assets/cntower.jpeg";
-import { useUserAuth } from "../context/UserAuthContext";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../auth/firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn, googleSignIn  } = useUserAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      await logIn(email, password);
-      navigate(-1);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
 
-  const handleGoogleSignIn = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      await googleSignIn();
-      navigate("/");
-    } catch (error) {
-      setError(error.message);
-    }
-  };
+    signIn(email,password, navigate)
+    console.log(email, password);
+
+  }
+
 
   return (
     <div className="loginContainer">
@@ -41,10 +28,10 @@ const Login = () => {
       </div>
       <div className="loginDiv">
         <h1>Login</h1>
-        {error && <Alert variant="danger">{error}</Alert>}
+        {/* {error && <Alert variant="danger">{error}</Alert>} */}
         <div className="loginDivInside">
           <div className="formDiv">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleLogin}>
               <label className="formLabel" htmlFor="email">
                 Email
               </label>
@@ -67,9 +54,9 @@ const Login = () => {
                 placeholder="Enter your password..."
                 onChange={(e) => setPassword(e.target.value)}
               />
-              {/* <button className="forgotPasswordButton">Forgot password?</button> */}
-              <button className="loginButton" type="submit">Login</button>
-              <button className="loginButton" onClick={handleGoogleSignIn}>
+              <button className="forgotPasswordButton">Forgot password?</button>
+              <button className="loginButton" type="submit" value='Login'>Login</button>
+              <button className="loginButton">
                 Continue with Google
               </button>
             </form>
